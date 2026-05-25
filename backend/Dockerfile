@@ -8,13 +8,17 @@ RUN apt-get update && apt-get install -y \
     curl \
     libzip-dev \
     zip \
-    && docker-php-ext-install zip
+    libpng-dev \
+    libonig-dev \
+    libxml2-dev \
+    default-mysql-client \
+    && docker-php-ext-install zip pdo pdo_mysql bcmath gd xml
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 COPY . .
 
-RUN composer install --no-dev --optimize-autoloader
+RUN composer install --no-dev --optimize-autoloader --no-plugins --no-scripts || composer install --no-dev --optimize-autoloader
 
 EXPOSE 10000
 

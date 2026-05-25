@@ -5,12 +5,12 @@ A futuristic full-stack healthcare platform for managing vaccines, ointments, ap
 ## Stack
 
 - Frontend: React, Vite, Tailwind CSS, Framer Motion, React Router DOM, Axios, React Three Fiber, Drei, Recharts
-- Backend: Laravel, Sanctum, MongoDB via `jenssegers/mongodb`
+- Backend: Laravel, Sanctum (MySQL by default)
 
 ## Repository Layout
 
 - `frontend/` - React dashboard and public UI
-- `backend/` - Laravel REST API with MongoDB models
+- `backend/` - Laravel REST API (Eloquent / MySQL by default)
 
 ## Features
 
@@ -56,9 +56,9 @@ VITE_API_BASE_URL=http://localhost:8000/api/v1
 APP_NAME="Smart Vaccine & Ointment Management System"
 APP_URL=http://localhost:8000
 FRONTEND_URL=http://localhost:5173
-DB_CONNECTION=mongodb
+DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
-DB_PORT=27017
+DB_PORT=3306
 DB_DATABASE=smart_vaccine_ointment
 DB_USERNAME=
 DB_PASSWORD=
